@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f6f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #f6f8fa;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  color: #101316;
+  background:
+    linear-gradient(180deg, rgba(236, 253, 249, 0.7) 0, rgba(246, 248, 250, 0) 240px),
+    #f6f8fa;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.katex {
+  font-size: 1.02em;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #11a68a;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #d1fbf1;
+}
+
+@layer components {
+  .panel {
+    @apply min-w-0 overflow-hidden rounded-lg border border-line bg-white shadow-tight;
+  }
+
+  .panel-pad {
+    @apply p-4 sm:p-5;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-[0.08em] text-muted;
+  }
+
+  .body-copy {
+    @apply max-w-[78ch] break-words text-[15px] leading-7 text-graphite sm:text-base sm:leading-8;
+  }
+
+  .technical-list {
+    @apply space-y-3 text-[15px] leading-7 text-graphite;
+  }
+
+  .control-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-white px-3 py-2 text-sm font-medium text-graphite transition hover:border-teal-500 hover:text-ink disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-ink px-3 py-2 text-sm font-semibold text-white transition hover:bg-graphite disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .metric-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.08em] text-muted;
+  }
+
+  .lesson-card {
+    @apply min-w-0 overflow-hidden rounded-lg border border-line bg-white p-4 shadow-tight sm:p-6;
+  }
+
+  .lesson-card-reading {
+    @apply border-l-4 border-l-teal-500;
+  }
+
+  .math-card {
+    @apply min-w-0 rounded-lg border border-line bg-white p-4 shadow-tight sm:p-5;
+    background:
+      linear-gradient(180deg, rgba(236, 253, 249, 0.55), rgba(255, 255, 255, 0) 120px),
+      #ffffff;
+  }
+
+  .math-render {
+    @apply mt-4 max-w-full overflow-x-auto rounded-md border border-line bg-[#fbfdfe] px-3 py-4 text-ink;
+  }
+
+  .math-render .katex-display {
+    margin: 0;
+  }
+
+  .math-render .katex {
+    @apply text-[14px] sm:text-[18px];
+  }
+}

@@ -38,6 +38,14 @@ export type PracticeDrill = {
   expected: string;
 };
 
+export type InterviewQuestion = {
+  id: string;
+  question: string;
+  answer: string;
+  difficulty: "core" | "math" | "systems" | "debugging" | "design";
+  tags: string[];
+};
+
 export type TopicModule = {
   slug: string;
   sequence: number;
@@ -54,6 +62,7 @@ export type TopicModule = {
   failureModes: FailureMode[];
   activeRecall: RecallQuestion[];
   practiceDrills: PracticeDrill[];
+  interviewQuestions?: InterviewQuestion[];
   memoryHooks: string[];
   checklist: string[];
   isSeed?: boolean;

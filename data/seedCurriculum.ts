@@ -1,4 +1,5 @@
 import { lifecycleTopics } from "@/data/lifecycleCurriculum";
+import { addInterviewQuestions } from "@/data/interviewQuestions";
 import type { TopicModule } from "@/types";
 
 const llmPretraining: TopicModule = {
@@ -307,7 +308,7 @@ const llmPretraining: TopicModule = {
 export const seedCurriculum: TopicModule[] = [
   llmPretraining,
   ...lifecycleTopics
-];
+].map(addInterviewQuestions);
 
 export function getSeedTopic(slug: string): TopicModule | undefined {
   return seedCurriculum.find((topic) => topic.slug === slug);

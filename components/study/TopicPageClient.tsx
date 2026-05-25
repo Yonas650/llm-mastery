@@ -7,6 +7,7 @@ import { getTopicProgress } from "@/lib/storage";
 import type { TopicModule } from "@/types";
 import { InteractiveFigure } from "@/components/figures/InteractiveFigure";
 import { ActiveRecallPanel } from "@/components/study/ActiveRecallPanel";
+import { InterviewPrep } from "@/components/study/InterviewPrep";
 import { MathEquation } from "@/components/study/MathEquation";
 import { MasteryChecklist } from "@/components/study/MasteryChecklist";
 import { PracticeDrills } from "@/components/study/PracticeDrills";
@@ -213,6 +214,8 @@ export function TopicPageClient({ seedTopics, slug }: TopicPageClientProps) {
             state={state}
             updateState={updateState}
           />
+
+          <InterviewPrep questions={topic.interviewQuestions} />
         </div>
 
         <aside className="min-w-0 space-y-4 lg:sticky lg:top-4 lg:self-start">
